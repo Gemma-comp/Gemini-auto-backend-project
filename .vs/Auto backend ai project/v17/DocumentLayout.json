@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Elijah\\Desktop\\backends\\Auto backend ai project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0BCE9540-7FE6-46C6-B637-5418FAA59A7F}|Auto backend ai project.njsproj|C:\\Users\\Elijah\\Desktop\\backends\\Auto backend ai project\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0BCE9540-7FE6-46C6-B637-5418FAA59A7F}|Auto backend ai project.njsproj|solutionrelative:package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BCE9540-7FE6-46C6-B637-5418FAA59A7F}|Auto backend ai project.njsproj|C:\\Users\\Elijah\\Desktop\\backends\\Auto backend ai project\\app.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{0BCE9540-7FE6-46C6-B637-5418FAA59A7F}|Auto backend ai project.njsproj|solutionrelative:app.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BCE9540-7FE6-46C6-B637-5418FAA59A7F}|Auto backend ai project.njsproj|C:\\Users\\Elijah\\Desktop\\backends\\Auto backend ai project\\tsconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0BCE9540-7FE6-46C6-B637-5418FAA59A7F}|Auto backend ai project.njsproj|solutionrelative:tsconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\Elijah\\Desktop\\backends\\Auto backend ai project\\package.json",
+              "RelativeDocumentMoniker": "package.json",
+              "ToolTip": "C:\\Users\\Elijah\\Desktop\\backends\\Auto backend ai project\\package.json",
+              "RelativeToolTip": "package.json",
+              "ViewState": "AQIAAAAAAABAZmZmZmYkwAcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-12T21:48:23.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "tsconfig.json",
+              "DocumentMoniker": "C:\\Users\\Elijah\\Desktop\\backends\\Auto backend ai project\\tsconfig.json",
+              "RelativeDocumentMoniker": "tsconfig.json",
+              "ToolTip": "C:\\Users\\Elijah\\Desktop\\backends\\Auto backend ai project\\tsconfig.json",
+              "RelativeToolTip": "tsconfig.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-12T21:35:41.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "app.ts",
+              "DocumentMoniker": "C:\\Users\\Elijah\\Desktop\\backends\\Auto backend ai project\\app.ts",
+              "RelativeDocumentMoniker": "app.ts",
+              "ToolTip": "C:\\Users\\Elijah\\Desktop\\backends\\Auto backend ai project\\app.ts",
+              "RelativeToolTip": "app.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-06-12T21:35:24.639Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
