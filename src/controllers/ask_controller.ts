@@ -6,16 +6,15 @@ const controller = (req: Request, res: Response): any => {
     if (!query) return res.status(400).json({
         status: "error",
         message: "Query is required",
-    })
+    });
 
-    //Pass query to ai service
-     
+    // Pass query to AI service
     
-    
-    
-    //Return ai response
-
+    // Return AI response
+    res.json({
+        status: "success",
+        message: "AI response here"
+    });
 }
-
 
 export default controller;
