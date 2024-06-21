@@ -1,7 +1,7 @@
 import cors from 'cors';
 import { config } from 'dotenv';
 import express from 'express';
-import askRouter from 'Routes/ask_router';
+import askRouter from 'src/Routes/ask_router';
 
 config();
 

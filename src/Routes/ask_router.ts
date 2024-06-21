@@ -1,4 +1,4 @@
-import controller from "controllers/ask_controller";
+import controller from "src/controllers/ask_controller";
 import * as express from "express";
 
 const askRouter = express.Router();
