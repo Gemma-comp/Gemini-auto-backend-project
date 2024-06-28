@@ -8,6 +8,9 @@ const execFileAsync = promisify(execFile);
 
 const controller = async (req: Request, res: Response) => {
     const { query } = req.body;
+    if (!query) {
+        return res.status(400).json({ status: "error", message: "Query is required" })
+    }
     try {
         const code = await genCode(query);
         const fileName = "generatedCode.js";
@@ -20,7 +23,8 @@ const controller = async (req: Request, res: Response) => {
             return res.status(500).json({ error: stderr });
         }
 
-        return res.status(200).json({ output: stdout.replace(/[\n\\]/g, '') });
+        const returnedData = stdout.replace(/[\n\\]/g, '')
+        return res.status(200).json({ output: returnedData });
     } catch (e) {
         return res.status(500).json({ error: e });
     }

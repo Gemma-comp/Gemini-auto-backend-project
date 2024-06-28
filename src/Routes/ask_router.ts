@@ -4,7 +4,7 @@ import controller from "../controllers/ask_controller.js";
 
 const askRouter = express.Router();
 
-askRouter.get("/", controller);
+askRouter.post("/", controller);
 
 export default askRouter;
 
