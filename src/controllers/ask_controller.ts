@@ -24,10 +24,10 @@ const controller = async (req: Request, res: Response) => {
             return res.status(500).json({ error: stderr });
         }
 
-        const returnedData = stdout.trim(); // Trim any extra whitespace/newlines
+        const returnedData = stdout.trim();
         const modifedResponseData = await modifyDBResponse(returnedData);
 
-        // Parsing the modified response data to remove unnecessary escape characters
+
         let parsedData;
         try {
             parsedData = JSON.parse(modifedResponseData as string);

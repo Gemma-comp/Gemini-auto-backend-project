@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 3001;
 
-app.use('/api/ask', askRouter);
+app.use('/api/get', askRouter);
 
 app.listen(PORT, () => {
     console.log(`🚀🚀🚀 Server is running on port ${PORT}\nvisit http://localhost:${PORT}`);
