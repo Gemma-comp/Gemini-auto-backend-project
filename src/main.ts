@@ -16,5 +16,5 @@ const PORT = process.env.PORT || 3001;
 app.use('/api/ask', askRouter);
 
 app.listen(PORT, () => {
-    console.log(`🚀🚀🚀 Server is running on port ${PORT}\n Visit http://localhost:${PORT}`);
+    console.log(`🚀🚀🚀 Server is running on port ${PORT}\nvisit http://localhost:${PORT}`);
 });
