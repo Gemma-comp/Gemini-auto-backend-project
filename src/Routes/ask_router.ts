@@ -2,9 +2,9 @@ import * as express from "express";
 import controller from "../controllers/ask_controller.js";
 
 
-const askRouter = express.Router();
+const getRouter = express.Router();
 
-askRouter.post("/", controller);
+getRouter.post("/", controller);
 
-export default askRouter;
+export default getRouter;
 
