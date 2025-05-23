@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { entityRecognitionAgent } from "../agents/entity-recognition.js";
 import { structureGenerationAgent } from "../agents/structure-generation.js";
+import { parentFolderCreationAgent } from "../agents/code-layer/parent-folder.js";
 
 export const userInputController = async (
   req: Request,
@@ -16,8 +17,11 @@ export const userInputController = async (
 
     const entityResponse = await entityRecognitionAgent(prompt);
     const structureResponse = await structureGenerationAgent(entityResponse);
-    
-    return res.status(200).json(structureResponse);
+    const parentFolderAgentResponse = await parentFolderCreationAgent(
+      structureResponse
+    );
+
+    return res.status(200).json(parentFolderAgentResponse);
   } catch (error) {
     const errorMessage =
       error instanceof Error ? error.message : "Unknown error";

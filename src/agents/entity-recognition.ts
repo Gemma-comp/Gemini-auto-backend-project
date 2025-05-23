@@ -123,7 +123,7 @@ export const entityRecognitionAgent = async (prompt: string) => {
     if (!jsonString) {
       throw new Error("Empty JSON string after cleaning");
     }
-
+    console.log("-----------Entities Created Successfully----------");
     return JSON.parse(jsonString);
   } catch (error) {
     console.error("Entity recognition failed:", error);
