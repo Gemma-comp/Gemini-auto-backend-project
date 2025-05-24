@@ -1,4 +1,5 @@
 import AgentsConfig from "../config/agents_config.js";
+import { EntityAgentResponseType } from "../types/entity-agent-type.js";
 import { ai, geminiModel } from "../utils/gemini-ai.js";
 
 const systemInstruction = `
@@ -88,7 +89,9 @@ ${JSON.stringify(
 )}
 `;
 
-export const entityRecognitionAgent = async (prompt: string) => {
+export const entityRecognitionAgent = async (
+  prompt: string
+): Promise<EntityAgentResponseType> => {
   try {
     console.log("---------------Generating Entities-----------------");
     const response = await ai.models.generateContent({
@@ -123,7 +126,7 @@ export const entityRecognitionAgent = async (prompt: string) => {
     if (!jsonString) {
       throw new Error("Empty JSON string after cleaning");
     }
-
+    console.log("-----------Entities Created Successfully----------");
     return JSON.parse(jsonString);
   } catch (error) {
     console.error("Entity recognition failed:", error);

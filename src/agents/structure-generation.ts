@@ -1,4 +1,5 @@
 import AgentsConfig from "../config/agents_config.js";
+import { StructureAgentResponseType } from "../types/structure-agent-type.js";
 import { ai, geminiModel } from "../utils/gemini-ai.js";
 
 const structureAgentSystemInstruction = (
@@ -101,13 +102,9 @@ ${JSON.stringify(
 };
 export const structureGenerationAgent = async (
   entityRecognitionAgentResponse: object
-): Promise<{
-  name: string;
-  files: Array<{ path: string; type: string }>;
-}> => {
+): Promise<StructureAgentResponseType> => {
   try {
     console.log("-----------------Generating project structure---------------");
-
     const response = await ai.models.generateContent({
       model: geminiModel,
       config: AgentsConfig.config(
@@ -147,7 +144,9 @@ export const structureGenerationAgent = async (
     if (!parsed?.name || !Array.isArray(parsed?.files)) {
       throw new Error("Invalid structure format returned");
     }
-
+    console.log(
+      "---------------Folder structuree generated successfully---------------------"
+    );
     return parsed;
   } catch (error) {
     console.error("Structure generation failed:", error);
