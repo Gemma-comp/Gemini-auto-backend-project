@@ -21,7 +21,15 @@ export const userInputController = async (
       structureResponse
     );
 
-    return res.status(200).json(parentFolderAgentResponse);
+    const parentFolderStatus = parentFolderAgentResponse
+      ? "✅success"
+      : "❌failure";
+
+    return res.status(200).json({
+      entityAgentResponse: entityResponse,
+      structureAgentResponse: structureResponse,
+      parentFolderCreationStatus: parentFolderStatus,
+    });
   } catch (error) {
     const errorMessage =
       error instanceof Error ? error.message : "Unknown error";

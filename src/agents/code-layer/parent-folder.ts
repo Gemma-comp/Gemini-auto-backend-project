@@ -90,7 +90,7 @@ export const parentFolderCreationAgent = async (
       nodeCode = nodeCode.slice(0, -3).trim();
     }
 
-    const tempFileName = `temp_create_folder_${Date.now()}.js`;
+    const tempFileName = `temp_file_${Date.now()}.js`; //This go hold the executable node js code to create the parent folder name.
     const tempFilePath = path.join(process.cwd(), tempFileName);
 
     fs.writeFileSync(tempFilePath, nodeCode);
