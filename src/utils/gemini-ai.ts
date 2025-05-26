@@ -4,4 +4,4 @@ dotenv.config();
 
 const apiKey = process.env.KEY;
 export const ai = new GoogleGenAI({ apiKey });
-export const geminiModel = "gemini-2.0-flash";
+export const geminiModel = "gemini-2.5-flash-preview-05-20";

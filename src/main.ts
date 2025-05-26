@@ -1,7 +1,6 @@
 import { config } from "dotenv";
 import express from "express";
 import { serverConfig } from "./config/server_config.js";
-import { NextFunction, Request, Response } from "express";
 import { userInputRouter } from "./Routes/user_input.js";
 
 config();

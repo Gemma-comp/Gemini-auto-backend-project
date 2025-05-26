@@ -4,8 +4,7 @@ import fs from "fs";
 import { StructureAgentResponseType } from "../../types/structure-agent-type.js";
 import { ai, geminiModel } from "../../utils/gemini-ai.js";
 import { EntityAgentResponseType } from "../../types/entity-agent-type.js";
-import { ModelAgentResponsePayload } from "../../types/model-agent-type.js";
-
+import { ModelAgentResponsePayload, modelAgentResponseType } from "../../types/model-agent-type.js";
 
 const modelAgentSystemInstruction = (
   entityAgentResponse: EntityAgentResponseType,
@@ -79,7 +78,7 @@ For a User model with email/password:
 export const modelGenerator = async (
   entityAgentResponse: EntityAgentResponseType,
   structureAgentResponse: StructureAgentResponseType
-): Promise<string> => {
+): Promise<modelAgentResponseType> => {
   try {
     console.log("Generating database models...");
     const projectFolderPath = path.join(
@@ -155,7 +154,10 @@ export const modelGenerator = async (
     }
 
     console.log("Database models generation and writing complete.");
-    return "Models generated and written successfully.";
+    return {
+      message: "Models generated and written successfully.",
+      agentResponse: modelPayload,
+    };
   } catch (error: any) {
     console.error("Fatal error in modelGenerator:", error);
     throw new Error(`Failed to generate and write models: ${error.message}`);

@@ -1,4 +1,4 @@
-type ModelCreationEntry = {
+export type ModelCreationEntry = {
   modelPath: string;
   code: string;
   exportName: string;
@@ -7,4 +7,10 @@ type ModelCreationEntry = {
 
 export type ModelAgentResponsePayload = {
   modelCreationCode: ModelCreationEntry[];
+};
+
+
+export type modelAgentResponseType = {
+  message: string;
+  agentResponse: ModelAgentResponsePayload;
 };

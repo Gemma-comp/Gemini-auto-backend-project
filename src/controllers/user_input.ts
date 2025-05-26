@@ -3,6 +3,8 @@ import { entityRecognitionAgent } from "../agents/entity-recognition.js";
 import { structureGenerationAgent } from "../agents/structure-generation.js";
 import { parentFolderCreationAgent } from "../agents/code-layer/parent-folder.js";
 import { modelGenerator } from "../agents/code-layer/model-generator.js";
+import { controllerGenerator } from "../agents/code-layer/controller-generator.js";
+import { middlewareGenerator } from "../agents/code-layer/middleware-generator.js";
 
 export const userInputController = async (
   req: Request,
@@ -28,12 +30,23 @@ export const userInputController = async (
       entityResponse,
       structureResponse
     );
-
+    const controllerResponse = await controllerGenerator(
+      modelResponse,
+      entityResponse,
+      structureResponse
+    );
+    const middlewareResponse = await middlewareGenerator(
+      modelResponse,
+      entityResponse,
+      structureResponse
+    );
     return res.status(200).json({
-      entityAgentResponse: entityResponse,
-      structureAgentResponse: structureResponse,
-      parentFolderCreationStatus: parentFolderStatus,
-      modelAgentResponse: modelResponse,
+      // entityAgentResponse: entityResponse,
+      // structureAgentResponse: structureResponse,
+      // parentFolderCreationStatus: parentFolderStatus,
+      // modelAgentResponse: modelResponse,
+      // controllerAgentResponse: controllerResponse,
+      middlewareAgentResponse: middlewareResponse,
     });
   } catch (error) {
     const errorMessage =
