@@ -1,10 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { entityRecognitionAgent } from "../agents/entity-recognition.js";
 import { structureGenerationAgent } from "../agents/structure-generation.js";
-import { parentFolderCreationAgent } from "../agents/code-layer/parent-folder.js";
-import { modelGenerator } from "../agents/code-layer/model-generator.js";
-import { controllerGenerator } from "../agents/code-layer/controller-generator.js";
-import { middlewareGenerator } from "../agents/code-layer/middleware-generator.js";
+import { configGenerator } from "../agents/code-layer/config-generator.js";
 
 export const userInputController = async (
   req: Request,
@@ -20,33 +17,10 @@ export const userInputController = async (
 
     const entityResponse = await entityRecognitionAgent(prompt);
     const structureResponse = await structureGenerationAgent(entityResponse);
-    const parentFolderAgentResponse = await parentFolderCreationAgent(
-      structureResponse
-    );
-    const parentFolderStatus = parentFolderAgentResponse
-      ? "✅success"
-      : "❌failure";
-    const modelResponse = await modelGenerator(
-      entityResponse,
-      structureResponse
-    );
-    const controllerResponse = await controllerGenerator(
-      modelResponse,
-      entityResponse,
-      structureResponse
-    );
-    const middlewareResponse = await middlewareGenerator(
-      modelResponse,
-      entityResponse,
-      structureResponse
-    );
+
     return res.status(200).json({
-      // entityAgentResponse: entityResponse,
-      // structureAgentResponse: structureResponse,
-      // parentFolderCreationStatus: parentFolderStatus,
-      // modelAgentResponse: modelResponse,
-      // controllerAgentResponse: controllerResponse,
-      middlewareAgentResponse: middlewareResponse,
+      entityAgentResponse: entityResponse,
+      structureAgentResponse: structureResponse,
     });
   } catch (error) {
     const errorMessage =

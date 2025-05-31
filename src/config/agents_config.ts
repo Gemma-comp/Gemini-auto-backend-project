@@ -2,7 +2,8 @@ import { GenerateContentConfig } from "@google/genai";
 
 class AgentsConfig {
   static config = (
-    systemInstruction: string
+    systemInstruction: string,
+    tools?: []
   ): GenerateContentConfig => {
     return {
       responseMimeType: "text/plain",
@@ -11,6 +12,7 @@ class AgentsConfig {
           text: `${systemInstruction}`,
         },
       ],
+      tools: tools,
     };
   };
 }

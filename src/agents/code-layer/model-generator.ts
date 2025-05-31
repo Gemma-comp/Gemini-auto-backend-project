@@ -4,7 +4,10 @@ import fs from "fs";
 import { StructureAgentResponseType } from "../../types/structure-agent-type.js";
 import { ai, geminiModel } from "../../utils/gemini-ai.js";
 import { EntityAgentResponseType } from "../../types/entity-agent-type.js";
-import { ModelAgentResponsePayload, modelAgentResponseType } from "../../types/model-agent-type.js";
+import {
+  ModelAgentResponsePayload,
+  modelAgentResponseType,
+} from "../../types/model-agent-type.js";
 
 const modelAgentSystemInstruction = (
   entityAgentResponse: EntityAgentResponseType,
@@ -124,6 +127,7 @@ export const modelGenerator = async (
     }
 
     let jsonString = response.text;
+    console.log("-----------jsonString------------", jsonString);
 
     jsonString = jsonString.trim();
     if (jsonString.startsWith("```json")) {

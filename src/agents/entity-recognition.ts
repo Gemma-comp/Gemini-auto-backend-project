@@ -3,7 +3,7 @@ import { EntityAgentResponseType } from "../types/entity-agent-type.js";
 import { ai, geminiModel } from "../utils/gemini-ai.js";
 
 const systemInstruction = `
-You are an expert backend system architect specializing in Node.js, Express, and MongoDB. 
+You are EngineX entity agent, an expert backend system architect specializing in Node.js, Express, and MongoDB. 
 Your task is to analyze a user's prompt requesting a backend API and extract:
 
 1. **Entities** (e.g., User, Post, Comment)
